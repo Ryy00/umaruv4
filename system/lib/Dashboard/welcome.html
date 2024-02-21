@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome - Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="./icon.png" type="image/x-icon">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="John Lester">
+        <meta name="description" content="Facebook Messenger Bot developed by John Lester">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="lib/loader.css">
+        <img src="./cover.jpg" style="display: none;"></img>
+    </head>
+    <body>
+      <div id="pageLoader" style="background-color: #202020; height: 100%; width: 100%; position: fixed;">
+        <div class="umcs"></div>
+      </div>
+      <div id="content" style="display: none;">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" id="changeTheme">
+            <div class="container-fluid">
+                <img src="./logo.png" alt="Umaru Logo" id="logo"></img>
+              <a class="navbar-brand" id="label">UmaruV4</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link mostOverView" href="dashboard.html">
+                      <i class="fa-solid fa-laptop"></i><span style="margin-left: 15px;">Overview</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <i class="fa-solid fa-user-group"></i><span style="margin-left: 15px;">Users</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="users.html">All users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="users_banned.html">All banned users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="users_unbanned.html">All unbanned Users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="friends_remover.html">Friends remover</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <i class="fa-solid fa-users"></i><span style="margin-left: 15px;">Threads</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="all_thread.html">All threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_active.html">All active threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_inactive.html">All inactive threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_banned.html">All banned threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_unbanned.html">All unbanned threads</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mostFocusSelector" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="mostFocusSelector">
+                      <i class="fa-solid fa-gear"></i><span style="margin-left: 15px;">Settings</span>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu">
+                      <li><a class="dropdown-item" href="/appState.html">AppState</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/config.html">Config</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/commands.html">Commands</a></li>
+                      <li><hr class="dropdown-divider"></li> 
+                      <li><a class="dropdown-item" href="/events.html">Events</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/welcome.html" id="mostFocusSelector">Welcome</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/leave.html">Leave</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/rankup.html">Rankup</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/bantemplate.html" >BanTemplate</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/schedule.html">Schedule</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="navbar-nav me-right mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle mostFocusSelector" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                    <i id="DarkAndLight"></i>
+                  </a>
+                  <ul class="dropdown-menu scrollable-menu">
+                    <li><a class="dropdown-item" onClick="changeTheme('light')" id="lightModes"><i class="fa-solid fa-sun"></i> Light</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" onClick="changeTheme('dark')" id="darkModes"><i class="fa-solid fa-moon"></i> Dark</a></li>
+                  </ul>
+                </li>
+                </ul>
+                <ul class="navbar-nav me-right mb-2 mb-lg-0" style="margin-left: -7px;">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mostFocusSelector" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <img src="facebook_user.png" style="width: 32px; height: 32px; border-radius: 50%;" id="dp"></img>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="min-width: 210px;">
+                       <li><a class="dropdown-item" onClick="profileAccount()">
+                        <img src="facebook_user.png" style="width: 45px; height: 45px; border-radius: 50%;" id="dps"></img>
+                         <span id="nam" style="margin-left: 10px;">Guest</span>
+                       </a></li>
+                       <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" onClick="logout();"><i class="fa-solid fa-right-from-bracket"></i><span style="margin-left: 10px;">Logout</span></a></li>
+                    </ul>
+                  </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+          <div id="items" style="margin-top: 90px;">
+            <div class="mostContent">
+              <div>
+                <h4 class="mostIcon" style="margin-top: 15px; margin-left:20px;" title="Designed by Freepik"><img src="icon/welcome.png" style="width: 50px;"></img> Welcome</h4>
+                <div class="text-success">
+                          <hr>
+                        </div>  
+              </div>
+              <div id="items">
+                <textarea placeholder="Welcome message" class="mostPlaceholder" id="addons_welcome"></textarea>
+              </div>
+              <div id="items" class="mostContentColor" style="margin-left: -18vw;margin-top: 30px;">
+                <ul style="margin-left: 40px;">
+                  <li>{name} - Name of member user</li>
+                  <li>{threadname} - Group name</li>
+                  <li>{num} - Current group members number</li>
+                </ul>
+              </div>
+          <div id="items" class="mostContentColor" style="margin-top: 30px;">
+            <button type="button" class="btn btn-primary" style="margin-right: 30px;" onClick="saveAndRestart()"><i class="fa-solid fa-floppy-disk fa-lg"></i><span style="margin-left: 10px;">Save</span></button>
+            <button type="button" class="btn btn-secondary" onClick="ResetToDefault()"><img src="icon/reset.png" style="width: 21px; margin-top: -3px; filter: invert(100%);"></img><span style="margin-left: 10px;">Reset</span></button>
+          </div>
+          <div>
+            <hr class="border border-secondary border-3 opacity-60">
+            <h4 class="mostIcon" style="margin-top: 15px; margin-left:10px;" title="Designed by Freepik"><img src="icon/canvas.png" style="width: 60px; margin-top: -10px;"></img> Canvas</h4>
+            <div class="text-success">
+                      <hr>
+                    </div>  
+          </div> 
+          <div id="items" style="margin-left: -60vmin;margin-top: 30px;">
+            <button type="button" class="btn btn-primary"  style="margin-left: 60px;"><label for="myFile"><i class="fa-solid fa-upload fa-lg"></i><span style="margin-left: 10px;">Upload file</span></label></button>
+            <input type="file" id="myFile" name="filename"  accept=".jpeg, .jpg, .png" style="display: none;" multiple>
+            </div>
+            <div class="container text-center" style="margin-top: 10px;">
+              <div class="row align-items-center" id="getPicture">
+              </div>
+              </div>       
+              <div>
+                <hr class="border border-secondary border-3 opacity-60">
+                <h4 class="mostIcon" style="margin-top: 15px; margin-left:10px;" title="Designed by Freepik"><img src="icon/gif.png" style="width: 60px; margin-top: -10px;"></img> Gifcanvas</h4>
+                <div class="text-success">
+                          <hr>
+                        </div>  
+              </div> 
+              <div id="items" class="mostContentColor" style="margin-left: -60vmin;margin-top: 30px;">
+                <button type="button" class="btn btn-primary"  style="margin-left: 60px;"><label for="myFiless"><i class="fa-solid fa-upload fa-lg"></i><span style="margin-left: 10px;">Upload file</span></label></button>
+                <input type="file" id="myFiless" name="filename"  accept=".gif" style="display: none;" multiple>
+                </div>
+                <div class="container text-center" style="margin-top: 10px;">
+                  <div class="row align-items-center" id="getPictures">
+                  </div>
+                  </div>
+                  <div>
+                    <hr class="border border-secondary border-3 opacity-60">
+                    <h4 class="mostIcon" style="margin-top: 15px; margin-left:10px;" title="Designed by Freepik"><img src="icon/custom.png" style="width: 60px; margin-top: -10px;"></img> Custom</h4>
+                    <div class="text-success">
+                              <hr>
+                            </div>  
+                  </div> 
+                  <div id="items" class="mostUpload">
+                    <button type="button" class="btn btn-primary"  style="margin-left: 60px;"><label for="myFiles"><i class="fa-solid fa-upload fa-lg"></i><span style="margin-left: 10px;">Upload file</span></label></button>
+                    <input type="file" id="myFiles" name="filename"  accept=".mp4, .mov, .avi, .flv, .wmv, .mkv, .m4v, .mpg, .mpeg, .3gp, .webm, .jpg, .jpeg, .png, .gif" style="display: none;" multiple>
+                    </div>
+                <div class="container text-center" style="margin-top: 10px;">
+                  <div class="row align-items-center" id="getCustom">
+                  </div>
+            </div>
+            <div style="margin-top: 30px;"></div>
+          </div>
+          </div>
+          <div style="margin-top: 100px"></div>
+          <div class="container text-start">
+            <div class="d-flex align-items-center">
+              <img src="./logo.png" alt="Umaru Logo" id="logo"></img>
+            <p class="mostContentColor" id="label" style="margin-top: 18px; margin-left: 10px;">UmaruV4</p>
+            </div>
+          <div class="row align-items-start">
+            <div class="col">
+              <h5 class="mostContentColor" style="font-family: 'Kanit', sans-sanif;">Links</h5>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/">
+                  Home
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/docs.html">
+                  Docs
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/contact.html">
+                  Contact
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/about.html">
+                  About
+                </a>
+              </p>
+            </div>
+            <div class="col" id="socialmedia">
+              <h5 class="mostContentColor" style="font-family: 'Kanit', sans-sanif;">Social media</h5> 
+            </div>
+          </div>
+          </div>
+          <hr class="border border-secondary border-1 opacity-100">
+          <div id="items">
+            <div id="allright">
+
+            </div>
+          </div>
+          </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+        <script src="lib/cookie.js"></script>
+        <script src="lib/welcome.js"></script>
+          </body>
+</html>

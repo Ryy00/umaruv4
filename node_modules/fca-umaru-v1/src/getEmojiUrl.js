@@ -1,0 +1,1 @@
+const t=require("util");module.exports=function(){return function(n,o,e){const r=t.format("%s/%s/%s.png",e=e||"1.0",o,n.codePointAt(0).toString(16));let s=317426846;for(let t=0;t<r.length;t++)s=(s<<5)-s+r.charCodeAt(t);const i=(255&s).toString(16);return t.format("https://static.xx.fbcdn.net/images/emoji.php/v8/z%s/%s",i,r)}};

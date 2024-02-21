@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="author" content="John Lester">
+        <meta name="description" content="Facebook Messenger Bot developed by John Lester">
+        <title>Overview - Dashboard</title>
+        <link rel="icon" href="./icon.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.4.0/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="lib/loader.css">
+        <img src="./cover.jpg" style="display: none;"></img>
+    </head>
+    <body>
+      <div id="pageLoader" style="background-color: #202020; height: 100%; width: 100%; position: fixed;">
+        <div class="umcs"></div>
+      </div>
+      <div id="content" style="display: none;">
+        <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary" id="changeTheme">
+            <div class="container-fluid">
+                <img src="./logo.png" alt="Umaru Logo" id="logo"></img>
+              <a class="navbar-brand" id="label">UmaruV4</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link mostOverView" href="dashboard.html" id="mostFocusSelector">
+                      <i class="fa-solid fa-laptop"></i><span style="margin-left: 15px;">Overview</span>
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <i class="fa-solid fa-user-group"></i><span style="margin-left: 15px;">Users</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="users.html">All users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="users_banned.html">All banned users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="users_unbanned.html">All unbanned Users</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="friends_remover.html">Friends remover</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <i class="fa-solid fa-users"></i><span style="margin-left: 15px;">Threads</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="all_thread.html">All threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_active.html">All active threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_inactive.html">All inactive threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_banned.html">All banned threads</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="threads_unbanned.html">All unbanned threads</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mostFocusSelector" tabindex="0" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <i class="fa-solid fa-gear"></i><span style="margin-left: 15px;">Settings</span>
+                    </a>
+                    <ul class="dropdown-menu scrollable-menu">
+                      <li><a class="dropdown-item" href="/appState.html">AppState</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/config.html" >Config</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/commands.html">Commands</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/events.html">Events</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/welcome.html">Welcome</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/leave.html">Leave</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/rankup.html">Rankup</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/bantemplate.html" >BanTemplate</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="/schedule.html">Schedule</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="navbar-nav me-right mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle mostFocusSelector" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                    <i id="DarkAndLight"></i>
+                  </a>
+                  <ul class="dropdown-menu scrollable-menu">
+                    <li><a class="dropdown-item" onClick="changeTheme('light')" id="lightModes"><i class="fa-solid fa-sun"></i> Light</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" onClick="changeTheme('dark')" id="darkModes"><i class="fa-solid fa-moon"></i> Dark</a></li>
+                  </ul>
+                </li>
+                </ul>
+                <ul class="navbar-nav me-right mb-2 mb-lg-0" style="margin-left: -7px;">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mostFocusSelector" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="haha">
+                      <img src="facebook_user.png" style="width: 32px; height: 32px; border-radius: 50%;" id="dp"></img>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end scrollable-menu" style="min-width: 210px;">
+                       <li><a class="dropdown-item" onClick="profileAccount()">
+                        <img src="facebook_user.png" style="width: 45px; height: 45px; border-radius: 50%;" id="dps"></img>
+                         <span id="nam" style="margin-left: 10px;">Guest</span>
+                       </a></li>
+                       <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" onClick="logout();"><i class="fa-solid fa-right-from-bracket"></i><span style="margin-left: 10px;">Logout</span></a></li>
+                    </ul>
+                  </li>
+                  </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="mostContent2">
+          <div>
+            <div class="text-success" style="opacity: 0;">
+              <hr>
+            </div>  
+          <h2 class="mostIcon">Welcome Back, <span class="admin"></span></h2>
+          <div class="text-success">
+            <hr>
+          </div>  
+          </div>
+          <div id="items">
+            <div id="botinfo">
+              <table id="tables">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fa-solid fa-robot"></i><span style="margin-left: 15px;">Bot Name</span></td>
+                    <td><span class="admin"></span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-toolbox"></i></i><span style="margin-left: 15px;">Prefix</span></td>
+                    <td><span id="PreFix"></span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-user-group"></i></i><span style="margin-left: 15px;">Users</span></td>
+                    <td><span id="numUsr"></span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-users"></i><span style="margin-left: 15px;">Threads</span></td>
+                    <td><span id="numTd"></span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-clock"></i><span style="margin-left: 15px;">Uptime</span></td>
+                    <td><span class="upt">0h 0m 0s</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-laptop"></i><span style="margin-left: 15px;">OS</span></td>
+                    <td><span class="os">None</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-memory"></i><span style="margin-left: 15px;">RAM</span></td>
+                    <td><span class="ram">0 MB</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-wifi"></i><span style="margin-left: 15px;">Ping</span></td>
+                    <td><span class="ping">0 ms</span></td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa-solid fa-clock"></i><span style="margin-left: 15px;">Time</span></td>
+                    <td><span class="time">00:00:00 AM</span></td>
+                  </tr>
+                  <tr id="tablesBottom">
+                    <td style="opacity: 0;">_____________</td>
+                    <td style="opacity: 0;">_____________</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <hr class="border border-secondary border-3 opacity-60">
+                <h2 class="mostIcon"><i class="fa-solid fa-terminal"></i> Console</h2>
+                <div class="text-success">
+                  <hr>
+                </div>  
+                <div id="items">
+                  <iframe id="consoles" src="/console.html" class="mostItem" style="width: 90%; min-height: 350px; z-index: 2;"></iframe>
+                </div>
+                <div id="items" style="margin-top: 20px;">
+                <button type="button" class="btn btn-success" onClick="onFull()"><i class="fa-solid fa-expand"></i><span style="margin-left: 15px;">View fullscreen</span></button>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <hr class="border border-secondary border-3 opacity-60">
+                <h2 class="mostIcon"><i class="fa-solid fa-terminal"></i> Shell</h2>
+                <div class="text-success">
+                  <hr>
+                </div>  
+                <div id="items">
+                  <iframe id="shells" src="/shell.html" class="mostItem" style="width: 90%; min-height: 350px; z-index: 2;"></iframe>
+                </div>
+                <div id="items" style="margin-top: 20px;">
+                  <button type="button" class="btn btn-success" onClick="onFulls()"><i class="fa-solid fa-expand"></i><span style="margin-left: 15px;">View fullscreen</span></button>
+                  </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev" id="gagi">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next" id="gagis">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div style="justify-content: center; align-items: center; display: flex; height: 50px;">
+          </div>
+          </div>
+          <div style="margin-top: 100px;"></div>
+          <div class="container text-start">
+            <div class="d-flex align-items-center">
+              <img src="./logo.png" alt="Umaru Logo" id="logo"></img>
+            <p class="mostContentColor" id="label" style="margin-top: 18px; margin-left: 10px;">UmaruV4</p>
+            </div>
+          <div class="row align-items-start">
+            <div class="col">
+              <h5 class="mostContentColor" style="font-family: 'Kanit', sans-sanif;">Links</h5>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/">
+                  Home
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/docs.html">
+                  Docs
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/contact.html">
+                  Contact
+                </a>
+              </p>
+              <p>
+                <a class="mostContentColorInf link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-100-hover" href="/about.html">
+                  About
+                </a>
+              </p>
+            </div>
+            <div class="col" id="socialmedia">
+              <h5 class="mostContentColor" style="font-family: 'Kanit', sans-sanif;">Social media</h5> 
+            </div>
+          </div>
+          </div>
+          <hr class="border border-secondary border-1 opacity-100">
+          <div id="items">
+            <div id="allright">
+
+            </div>
+          </div>
+          </div>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+          <script src="lib/cookie.js"></script>
+          <script src="lib/dashboard.js"></script>
+          </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html onClick="onTop()">
+    <head>
+        <title>Shell</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                background-color: #1C2333;
+            }
+            #terminal {
+  background-color: #1C2333;
+  color: white;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#output {
+  flex-grow: 1;
+  overflow-y: auto;
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+#input {
+  display: flex;
+}
+
+#prompt {
+  font-size: 1em;
+}
+
+
+#command {
+  width: 100%;
+  background-color: #1C2333;
+  color: white;
+}
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+        </style>
+    </head>
+    <body>
+      <div id="terminal">
+        <div id="output"></div>
+        <div id="input">
+          <pre id="prompt">
+ <span style="color:skyblue">┌──(</span><b style="color: rgb(0, 255, 0)" id="host">user㉿localhost</b><span style="color:skyblue">)-[<b style="color: white;" id="dire">~</b>]</span>
+ <span style="color:skyblue">└─$</span> <input type="text" id="command" autocomplete="off" style="width: 80vw; font-size: 0.88em;"> 
+          </pre>
+        </div>
+      </div>     
+      <script src="lib/cookie.js"></script> 
+      <script src="lib/shell.js"></script>
+    </body>
+</html>

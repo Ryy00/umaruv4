@@ -1,0 +1,1 @@
+const e=require("../utils");module.exports=function(t,n,o){return function(r){if("Object"!=e.getType(r))throw new Error("moduleObj must be an object, not "+e.getType(r)+"!");for(const u in r){if("Function"!=e.getType(r[u]))throw new Error('Item "'+u+'" in moduleObj must be a function, not '+e.getType(r[u])+"!");n[u]=r[u](t,n,o)}}};

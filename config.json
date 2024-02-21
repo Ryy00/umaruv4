@@ -1,0 +1,137 @@
+{
+	"language": "en",
+	"TimeZone": "Asia/Manila",
+	"ProductKey": "nA== PvOu D8EH xf5E Iy3k t6Py f5Qf dAAV enpp Ur/s Dney sA3Q nJjO Nn7g FBYU xhr/ 047H pgnA 27ls 2d+3 S+G6 cHHm",
+	"key": "B8 4F A8 35 64 48 7C 98 AD B1 5A 14 A1 6E 4E 0B",
+	"Dashboard": "http://ayesha.hazeyy01.repl.co",
+	"dashboard": "http://ayesha.hazeyy01.repl.co",
+	"PORT": 8080,
+	"currentMainPort": 8080,
+	"DeveloperMode": false,
+	"DisableCommands": [],
+	"DisableEvents": [],
+	"login": [
+		"fca-umaru-v1",
+		"fca-umaru-v2"
+	],
+	"botname": "ฮาเซย์ วู",
+	"prefix": "~",
+	"nickname": "》 {prefix} 《 ❃ ➠ {botname}",
+	"adminbot": [
+		"100048892837161",
+		"100090696458093"
+	],
+	"RankupMode": "gifcanvas",
+	"WelcomeMode": "canvas",
+	"LeaveMode": "canvas",
+	"BanTemplate": "none",
+	"SqliteDB": true,
+	"AppStatePath": "/appstate.txt",
+	"DatabasePath": "/data/data",
+	"PerformanceMode": false,
+	"LanguageAndTimeZone_Detector": true,
+	"Anonymous": true,
+	"console": true,
+	"JournalingMechanism": true,
+	"AppStateEncryption": true,
+	"ActiveStatus": true,
+	"EventInUsers": true,
+	"kernel": [
+		"http://dono-03.danbot.host:4488"
+	],
+	"PerformanceModeConfig": {
+		"ThreadLimit": 100,
+		"ThreadPerResponseLimit": 100,
+		"AutoLeaveInactiveGroupMode": false,
+		"AutoLeaveMode": false,
+		"resend": true,
+		"LanguageAndTimeZone_Detector": true,
+		"Scheduler": false,
+		"nsfw": false,
+		"UsersPhoto": false
+	},
+	"Owner": "ฮาเซย์ วู",
+	"Age": 18,
+	"Gender": "Male",
+	"Facebook": "https://www.facebook.com/Hazeyy0",
+	"cmd_not_found": "Command {{1}} not found\nUse {{2}} to display all commands is that {{3}} or not?",
+	"permission_1": "⚠️ You don't have permission to use \"{{1}}\". Only group admin can use this command.",
+	"permission_2": "⚠️ You don't have permission to use \"{{1}}\". Only admin can use this command.",
+	"nsfw_msg": "⚠️ Your group is not allowed to use NSFW commands.",
+	"cooldown_msg": "Please wait {{1}}. {{2}}",
+	"Automated": {
+		"AutoReact": true,
+		"AutoLeaveMode": false,
+		"AutoLeaveInactiveGroupMode": false,
+		"AutoOffBot": false,
+		"AutoOffBotStartSleep": "01:00",
+		"AutoOffBotSendMessage": "Bye everyone. i need to rest to maintain stable i'll be right back at 5:00AM 🥰",
+		"AutoOffBotEndSleep": "05:00",
+		"AutoGreet": true,
+		"AutoGreetWithSticker": true,
+		"AutoGreetSendPerHour": "1",
+		"HolidayAutoGreet": true,
+		"ChristmasCountdown": false,
+		"ChristmasCountdownMsg": "🎄 {{1}} days before christmas\n{{2}}",
+		"AcceptFriendRequest": false,
+		"AutoPending": false,
+		"PendingMsg": "{botname} Connected Successfully!\nUse {prefix}help for more info :>",
+		"AutoBioStatus": false,
+		"AutoBioStatusSetPerHour": "1",
+		"BioStatus": "Prefix: {prefix}\nmade by: ฮาเซย์ วู\n\n🟢 Active: {time}",
+		"AutoLeave": false
+	},
+	"FcaOptions": {
+		"forceLogin": true,
+		"listenEvents": true,
+		"logLevel": "silent",
+		"selfListen": false,
+		"autoMarkRead": true,
+		"userAgent": "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 OPR/84.0.4316.21",
+		"autoReconnect": true
+	},
+	"Addons": {
+		"Welcome": "Hello everyone, please welcome {name} to the group! We're so glad to have you here. Feel free to introduce yourself and share a bit about your interests. We're a friendly bunch and always happy to chat.",
+		"Leave": {
+			"goodbye": "Goodbye {name}.\n\nReason: {reason}",
+			"left": "Left the group",
+			"remove": "Kicked by Administrator"
+		},
+		"Rankup": "{name} your keyboard hero level has reached level {level}",
+		"isBanned": {
+			"thread": "❎ Your thread is unable to use bot \n\nReason: {reason}",
+			"user": "❎ Your unable to use bot \n\nReason: {reason}"
+		},
+		"Scheduler": {
+			"Hello Greet every 1 Hour": {
+				"isEnable": true,
+				"schedule": "1 */01 * * *",
+				"messages": "Hello everyone have a nice day.",
+				"attachment": "None",
+				"value": "00-00 01:00",
+				"mode": "Interval"
+			},
+			"Good morning in 6:00AM": {
+				"isEnable": true,
+				"schedule": "1 06 * * *",
+				"messages": "Good morning everyone have a nice day",
+				"attachment": "None",
+				"value": "00-00 06:00",
+				"mode": "None"
+			},
+			"Ayanne": {
+				"isEnable": false,
+				"schedule": "*/15 * * * *",
+				"messages": "Hello Baby i miss you mwaaaa 💋 )",
+				"attachment": "None",
+				"value": "00-00 00:15",
+				"mode": "Interval"
+			}
+		},
+		"key": "B8 4F A8 35 64 48 7C 98 AD B1 5A 14 A1 6E 4E 0B",
+		"Backup": {
+			"key": "B8 4F A8 35 64 48 7C 98 AD B1 5A 14 A1 6E 4E 0B"
+		}
+	},
+	"Key": "53 8D E6 D4 0B 12 F9 62 B5 CD FC A6 56 80 49 A6"
+}

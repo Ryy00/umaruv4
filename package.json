@@ -1,0 +1,46 @@
+{
+	"name": "UmaruV4",
+	"version": "40.0.2",
+	"description": "Facebook Messenger Bot made by John Lester",
+	"main": "index.js",
+	"scripts": {
+		"start": "pm2 kill && pm2 start index.js -i 1 --no-daemon"
+	},
+	"type": "module",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rootalocalhost-dev/UmaruV4"
+	},
+	"keywords": [
+		"UmaruV4Bot",
+		"rootalocalhost.dev",
+		"JohnLesterproject"
+	],
+	"author": "John Lester",
+	"license": "AGPL-3.0 license",
+	"bugs": {
+		"url": "https://github.com/rootalocalhost-dev/UmaruV4/issues"
+	},
+	"homepage": "https://github.com/rootalocalhost-dev/UmaruV4",
+	"dependencies": {
+		"ansi-to-html": "^0.7.2",
+		"axios": "^1.6.2",
+		"better-sqlite3": "^9.2.2",
+		"chalk": "^5.3.0",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.6",
+		"express": "^4.18.2",
+		"fca-umaru-v1": "^40.1.24",
+		"fca-umaru-v2": "^40.1.25",
+		"fs-extra": "^11.2.0",
+		"googlethis": "^1.8.0",
+		"helmet": "^7.1.0",
+		"moment-timezone": "^0.5.43",
+		"msgpackr": "^1.10.0",
+		"node-cron": "^3.0.3",
+		"pm2": "^5.3.0",
+		"tinyurl": "^1.1.7",
+		"ws": "^8.15.1"
+	},
+	"compiled": "replit"
+}
